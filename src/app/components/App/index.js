@@ -11,7 +11,7 @@ const App = ({ output, status }) => {
     <div className="App">
       <Editor />
       <Output>{output}</Output>
-      <Status>{status}</Status>
+      <Status status={status} />
     </div>
   )
 }
