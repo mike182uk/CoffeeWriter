@@ -16,8 +16,8 @@ const createWindow = () => {
 
   let url = `file://${path.resolve(__dirname, '../app/index.html')}`
 
-  if (ENV == 'dev') {
-    windowOptions.width = 1100;
+  if (ENV === 'dev') {
+    windowOptions.width = 1100
     url = `http://localhost:${process.env.DEV_SERVER_PORT}`
   }
 
@@ -25,7 +25,7 @@ const createWindow = () => {
 
   window.loadURL(url)
 
-  if (ENV == 'dev') {
+  if (ENV === 'dev') {
     window.webContents.openDevTools()
   }
 

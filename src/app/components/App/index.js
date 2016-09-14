@@ -8,12 +8,12 @@ import './styles.css'
 
 const App = ({ output, status }) => {
   return (
-    <div className="App">
-      <div className="App__EditorOutput">
+    <div className='App'>
+      <div className='App__EditorOutput'>
         <Editor />
         <Output>{output}</Output>
       </div>
-      <div className="App__Status">
+      <div className='App__Status'>
         <Status status={status} />
       </div>
     </div>

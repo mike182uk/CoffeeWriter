@@ -12,7 +12,7 @@ export default function ({ children }) {
   }
 
   return (
-    <div className="Output">
+    <div className='Output'>
       <Codemirror options={options} value={children} />
     </div>
   )

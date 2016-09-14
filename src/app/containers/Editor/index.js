@@ -13,10 +13,10 @@ const Editor = ({ dispatch }) => {
   }
 
   return (
-    <div className="Editor">
+    <div className='Editor'>
       <Codemirror options={options} onChange={input => {
         dispatch(compileInput(input))
-      }} value="# CoffeeScript goes here..." />
+      }} value='# CoffeeScript goes here...' />
     </div>
   )
 }

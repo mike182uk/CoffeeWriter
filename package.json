@@ -7,7 +7,8 @@
     "dev:app": "scripty",
     "build": "scripty",
     "built-app": "scripty",
-    "package": "scripty"
+    "package": "scripty",
+    "lint": "standard 'src/**/*.js*' './webpack*.js'"
   },
   "dependencies": {
     "codemirror": "^5.18.2",
@@ -29,6 +30,7 @@
     "electron-packager": "^8.0.0",
     "html-webpack-plugin": "^2.22.0",
     "scripty": "^1.6.0",
+    "standard": "^8.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"

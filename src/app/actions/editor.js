@@ -7,7 +7,7 @@ export function compileInput (input) {
     let output = ''
     let status = {}
 
-    if (input == '') {
+    if (input === '') {
       return [
         setStatus(status),
         updateOutput('')
