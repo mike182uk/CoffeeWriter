@@ -17,7 +17,7 @@ export default function ({ status }) {
 
   if (!status.message) {
     status = (
-      <p className="Status__message">Everything is OK</p>
+      <p className="Status__message">Code looks good 👍</p>
     )
     className += ' Status--ok'
   } else {
