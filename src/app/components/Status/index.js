@@ -4,7 +4,7 @@ import './styles.css'
 
 export default function ({ children }) {
   return (
-    <div className="Error">
+    <div className="Status">
       {children}
     </div>
   )

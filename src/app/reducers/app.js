@@ -1,9 +1,9 @@
-import { SET_ERROR } from '../actions/error'
+import { SET_STATUS } from '../actions/status'
 import { UPDATE_OUTPUT } from '../actions/output'
 
 const initialState = {
   output: '',
-  error: ''
+  status: ''
 }
 
 export default function (state = initialState, action) {
@@ -13,9 +13,9 @@ export default function (state = initialState, action) {
         output: action.output
       })
 
-    case SET_ERROR:
+    case SET_STATUS:
       return Object.assign({}, state, {
-        error: action.error
+        status: action.status
       })
 
     default:

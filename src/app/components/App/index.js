@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Editor from '../../containers/Editor'
-import Error from '../error'
+import Status from '../status'
 import Output from '../Output'
 
 import './styles.css'
 
-const App = ({ output, error }) => {
+const App = ({ output, status }) => {
   return (
     <div className="App">
       <Editor />
       <Output>{output}</Output>
-      <Error>{error}</Error>
+      <Status>{status}</Status>
     </div>
   )
 }
@@ -19,7 +19,7 @@ const App = ({ output, error }) => {
 const mapStateToProps = (state) => {
   return {
     output: state.app.output,
-    error: state.app.error
+    status: state.app.status
   }
 }
 
