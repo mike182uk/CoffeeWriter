@@ -1,7 +1,10 @@
 .Status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   flex: 0 0 100%;
   transition: background-color 0.4s ease;
-  text-align: center;
 }
 
 .Status--ok {
