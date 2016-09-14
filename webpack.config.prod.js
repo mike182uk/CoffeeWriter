@@ -4,13 +4,12 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  devtool: 'sourcemaps',
   entry: [
     path.resolve(__dirname, 'src/app/index.js')
   ],
   output: {
-    pathinfo: true,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'build', 'app')
   },
   resolve: {
     alias: {

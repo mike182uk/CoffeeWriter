@@ -1,9 +1,13 @@
 {
-  "name": "coffee-writer",
+  "name": "CoffeeWriter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --dev --colors --hot --inline --port 3000 --content-base ./src/app --config ./webpack.config.dev.js"
+    "dev:server": "scripty",
+    "dev:app": "scripty",
+    "build": "scripty",
+    "built-app": "scripty",
+    "package": "scripty"
   },
   "dependencies": {
     "codemirror": "^5.18.2",
@@ -21,8 +25,10 @@
     "babel-preset-latest": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "css-loader": "^0.25.0",
-    "find-cache-dir": "^0.1.1",
+    "electron": "^1.3.6",
+    "electron-packager": "^8.0.0",
     "html-webpack-plugin": "^2.22.0",
+    "scripty": "^1.6.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"

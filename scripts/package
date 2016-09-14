@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+rm -rf ./dist/*
+
+electron-packager ./build --platform darwin --arch x64 --out ./dist --asar
