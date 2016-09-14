@@ -1,4 +1,15 @@
 .Output {
   flex: 0 0 50%;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Output .ReactCodeMirror {
+  flex: 0 0 100%;
+  overflow: hidden;
+}
+
+.Output .CodeMirror {
+  height: 100%;
 }

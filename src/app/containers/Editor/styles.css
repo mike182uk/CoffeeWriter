@@ -1,4 +1,15 @@
 .Editor {
   flex: 0 0 50%;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Editor .ReactCodeMirror {
+  flex: 0 0 100%;
+  overflow: hidden;
+}
+
+.Editor .CodeMirror {
+  height: 100%;
 }

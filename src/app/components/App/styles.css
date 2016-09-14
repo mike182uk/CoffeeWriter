@@ -1,5 +1,17 @@
 .App {
   display: flex;
+  flex-direction: column;
+  height: 100vh
+}
+
+.App__EditorOutput {
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex: 0 0 85%;
+}
+
+.App__Status {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 15%;
 }
