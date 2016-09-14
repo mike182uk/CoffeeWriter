@@ -1,0 +1,29 @@
+{
+  "name": "coffee-writer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --dev --colors --hot --inline --port 3000 --content-base ./src/app --config ./webpack.config.dev.js"
+  },
+  "dependencies": {
+    "codemirror": "^5.18.2",
+    "react": "^15.3.1",
+    "react-codemirror": "^0.2.6",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-latest": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.25.0",
+    "find-cache-dir": "^0.1.1",
+    "html-webpack-plugin": "^2.22.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
