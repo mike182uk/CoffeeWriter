@@ -7,6 +7,7 @@ import reducer from './reducers'
 
 import App from './components/App'
 
+import 'normalize.css'
 import 'codemirror/lib/codemirror.css'
 import './styles.css'
 
