@@ -5,10 +5,11 @@ import CoffeeScript from 'coffee-script'
 export function compileInput (input) {
   return dispatch => {
     let output = ''
+    let status = {}
 
     if (input == '') {
       return [
-        setStatus(''),
+        setStatus(status),
         updateOutput('')
       ].map(dispatch)
     }
@@ -16,14 +17,13 @@ export function compileInput (input) {
     try {
       output = CoffeeScript.compile(input, { bare: true })
     } catch (e) {
-      return [
-        setStatus(e.message),
-        updateOutput('')
-      ].map(dispatch)
+      status.message = e.message
+      status.line = e.location.first_line + 1
+      status.column = e.location.first_column + 1
     }
 
     return [
-      setStatus(''),
+      setStatus(status),
       updateOutput(output)
     ].map(dispatch)
   }

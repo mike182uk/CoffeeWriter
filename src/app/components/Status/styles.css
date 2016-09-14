@@ -11,3 +11,12 @@
 .Status--error {
   background-color: #f1a1a1;
 }
+
+.Status__error__type {
+  font-weight: bold;
+}
+
+.Status__error__location {
+  font-size: 0.8rem;
+  font-style: italic;
+}
