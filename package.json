@@ -1,7 +1,18 @@
 {
   "name": "CoffeeWriter",
   "version": "0.1.0",
+  "description": "A simple desktop app for quickly compiling CoffeeScript",
   "private": true,
+  "author": "Michael David Barrett <mike182uk@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mike182uk/coffee-writer.git"
+  },
+  "homepage": "https://github.com/mike182uk/coffee-writer",
+  "bugs": {
+    "url": "https://github.com/mike182uk/coffee-writer/issues"
+  },
   "scripts": {
     "dev:server": "scripty",
     "dev:app": "scripty",
