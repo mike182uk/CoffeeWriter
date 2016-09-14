@@ -16,7 +16,8 @@
   "scripts": {
     "dev:server": "scripty",
     "dev:app": "scripty",
-    "build": "scripty",
+    "build:app": "scripty",
+    "build:icon": "scripty",
     "built-app": "scripty",
     "package": "scripty",
     "lint": "standard 'src/**/*.js*' './webpack*.js'"

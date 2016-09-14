@@ -2,4 +2,4 @@
 
 rm -rf ./dist/*
 
-electron-packager ./build --platform darwin --arch x64 --out ./dist --asar
+electron-packager ./build --platform darwin --arch x64 --out ./dist --icon ./build/electron/CoffeeWriter.icns --asar
