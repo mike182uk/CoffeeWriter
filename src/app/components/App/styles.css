@@ -7,11 +7,11 @@
 .App__EditorOutput {
   display: flex;
   flex-direction: row;
-  flex: 0 0 85%;
+  flex: 100 1 auto;
 }
 
 .App__Status {
   display: flex;
   flex-direction: row;
-  flex: 0 0 15%;
+  flex: 2 0 auto;
 }
