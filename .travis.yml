@@ -9,6 +9,10 @@ cache:
   directories:
     - node_modules
 
+env:
+  global:
+    - secure: kAHzfCHFXghSvVtHHmnyLBP+CKO7JjDnWqEB96sV3BC6Y6JmrpQoNQfCZucSnPBcoUBRTVTFizHeYNC97LiPf4mv33SXnjmZOh+IQjSFdR5MKsH00Me2pg7W97x5E09fnHATnxLPCjUImvFrKe19/svGexTV/sFlf3jg8ZoZXo/ljVxXWz/cFa5eTfHhZ/b86/xZfJTDyjpgB6C48sZe/RfM5zxrUlJsEK0ezU8VCxdNMq1DCYlGta0mvRe3Y7PaZyChiJnXNzKeeREWs67S+OTFowq2XIMAmF/TiteMirXdNn/gac7wr/gF7Ys/Tx1vezcEzDH0Y4EUqncfuneFFNNb2bNzTrZEtMjy5w3RN9gWOoSBUfI6NC7/SAPOLU51eO4brDaiALoNn9dP+E0hWNOG37Ij+5ssSih7lWd5Z5SBF1AM2zN1Vk9gQT9eY/fx/ldZlTYhNhxBGCO28vGHUvn/VjUiMa4DD2WciOIZ8BCfaPikf+qVIztQoZCjT8euH40A1dFcL/VQtLHIhVlk+Qak2ZmGE6ewhdLlr8BBaF7cW7ga34mqYpMkMsrC2TucY158SaWzOqVwJt1ddF2IHM8hSgTNhsUkEaQRDnzolbKYhRUWFbrp3GIMnfqUUvBNmNZR2y81nbpSAJpJZu3VGRCol6i/EOGja20sLMaimTM=
+
 before_script:
     - npm run lint
 
