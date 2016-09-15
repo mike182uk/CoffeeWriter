@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+rm -rf ./build/*
+
+webpack --config ./webpack.config.prod.js
+
+cp -r ./src/electron ./build/
+cp -r ./package.json ./build/
+
+echo "require('./electron/main.js')" > ./build/index.js

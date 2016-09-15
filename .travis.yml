@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - stable
+
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+
+before_script:
+    - npm run lint
+
+script:
+  - npm run build:app
+  - npm run package
+
+after_script:
+  - npm run ci:release
