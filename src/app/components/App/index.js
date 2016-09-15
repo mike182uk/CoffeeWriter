@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Editor from '../../containers/Editor'
-import Status from '../status'
+import Status from '../Status'
 import Output from '../Output'
 
 import './styles.css'
