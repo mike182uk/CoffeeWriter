@@ -7,11 +7,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mike182uk/coffee-writer.git"
+    "url": "git://github.com/mike182uk/CoffeeWriter.git"
   },
-  "homepage": "https://github.com/mike182uk/coffee-writer",
+  "homepage": "https://github.com/mike182uk/CoffeeWriter",
   "bugs": {
-    "url": "https://github.com/mike182uk/coffee-writer/issues"
+    "url": "https://github.com/mike182uk/CoffeeWriter/issues"
   },
   "scripts": {
     "dev:server": "scripty",
