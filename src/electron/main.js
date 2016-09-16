@@ -3,6 +3,7 @@ const path = require('path')
 
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
+const Menu = electron.Menu
 
 const ENV = process.env.NODE_ENV || 'prod'
 
@@ -11,7 +12,10 @@ let window
 const createWindow = () => {
   let windowOptions = {
     width: 800,
-    height: 600
+    height: 600,
+    webPreferences: {
+      preload: path.resolve(__dirname, 'preload.js')
+    }
   }
 
   let url = `file://${path.resolve(__dirname, '../app/index.html')}`
@@ -34,7 +38,31 @@ const createWindow = () => {
   })
 }
 
-app.on('ready', createWindow)
+const createMainMenu = (app) => {
+  var template = [
+    {
+      label: app.getName(),
+      submenu: [
+        { label: `About ${app.getName()}`, selector: 'orderFrontStandardAboutPanel:' },
+        { type: 'separator' },
+        { label: 'Quit', accelerator: 'Command+Q', click: () => app.quit() }
+      ]
+    }, {
+      label: 'Edit',
+      submenu: [
+        { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
+        { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
+        { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' }
+      ]}
+  ]
+
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template))
+}
+
+app.on('ready', () => {
+  createWindow()
+  createMainMenu(app)
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
