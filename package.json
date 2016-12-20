@@ -20,8 +20,8 @@
     "build:icon": "scripty",
     "built-app": "scripty",
     "package": "scripty",
-    "lint": "standard 'src/**/*.js*' './webpack*.js'",
-    "ci:release": "scripty"
+    "clean": "scripty",
+    "lint": "standard 'src/**/*.js*' './webpack*.js'"
   },
   "dependencies": {
     "codemirror": "^5.18.2",

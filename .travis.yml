@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - stable
+  - v7
 
 sudo: false
 
@@ -9,16 +9,18 @@ cache:
   directories:
     - node_modules
 
-env:
-  global:
-    - secure: kAHzfCHFXghSvVtHHmnyLBP+CKO7JjDnWqEB96sV3BC6Y6JmrpQoNQfCZucSnPBcoUBRTVTFizHeYNC97LiPf4mv33SXnjmZOh+IQjSFdR5MKsH00Me2pg7W97x5E09fnHATnxLPCjUImvFrKe19/svGexTV/sFlf3jg8ZoZXo/ljVxXWz/cFa5eTfHhZ/b86/xZfJTDyjpgB6C48sZe/RfM5zxrUlJsEK0ezU8VCxdNMq1DCYlGta0mvRe3Y7PaZyChiJnXNzKeeREWs67S+OTFowq2XIMAmF/TiteMirXdNn/gac7wr/gF7Ys/Tx1vezcEzDH0Y4EUqncfuneFFNNb2bNzTrZEtMjy5w3RN9gWOoSBUfI6NC7/SAPOLU51eO4brDaiALoNn9dP+E0hWNOG37Ij+5ssSih7lWd5Z5SBF1AM2zN1Vk9gQT9eY/fx/ldZlTYhNhxBGCO28vGHUvn/VjUiMa4DD2WciOIZ8BCfaPikf+qVIztQoZCjT8euH40A1dFcL/VQtLHIhVlk+Qak2ZmGE6ewhdLlr8BBaF7cW7ga34mqYpMkMsrC2TucY158SaWzOqVwJt1ddF2IHM8hSgTNhsUkEaQRDnzolbKYhRUWFbrp3GIMnfqUUvBNmNZR2y81nbpSAJpJZu3VGRCol6i/EOGja20sLMaimTM=
-
-before_script:
-    - npm run lint
-
 script:
-  - npm run build:app
-  - npm run package
+  - npm run lint
 
-after_script:
-  - npm run ci:release
+after_success:
+  - if [ -n "$TRAVIS_TAG" ]; then npm run build:app && npm run package; fi;
+
+deploy:
+  provider: releases
+  api_key:
+    secure: iBdhN0QKgOHKgfZc3bfXr0qzFe0QdG0LGGoeJkcbe4HfWHcXIJpEQFzRMbMy2208uQlRKUflScC3hKtqThrKuv8IKZwCVTEsjH4gIhP9W1EVPJAoVOj0/kTo3QVJA3eP3tjxzLfHRzj1iJXmDm9QOKgBYadSwbX3aUpSWlKGszWG0d4Eszk3x5eN0oDcoRH28JJ8YYlJlm8I+LFj26Up98Zkn8INMU2XgGG7N8QpWAEAwHIv7mA6Zc06NTutIsPa9us1vH/6biraBm/KyfLTLUVsV5WLD6GBDG+0tZY0vXT1HRDIWOyIaMUQ3QK+0VjdTs1Ac7N8//jhcNWHLNVB0aJ9jYSh9j1K6CLGPoNjr4lJROkwYr0IgYEH6XkjeQM4i05YqBDAJR2UOIrrlhHvUV7BcYkHV1CClpMxGmcXRV+/QPablN0izFHunMmetioYmvbMCdLb3MveLEdzRJeOJDT6qhXolTPfOrDGb3cm48MfWKHTH3lXZMQnMntfCJQ8aEcW4upnKd3nSGkVbYKwb1fCNS3TuirYE/AHHPq4eGYSDDONhqBCPkO6aQtJFb9Qh57esUJ5oMWNSlm4SxVubYGEPUWdd6u1okylQ2i3aVOsWxy3C3QPyyNhQupW0Ca8p1qdOPJbIk4xjAM5uPTgy+to5EkTo65DpCvBdNGWR70=
+  file_glob: true
+  file: build/*.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true

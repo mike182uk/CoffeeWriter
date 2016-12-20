@@ -54,5 +54,3 @@ npm run built-app
 ```
 npm run package
 ```
-
-The application currently gets built automatically via the CI server whenever a push is made to the master branch or a version is tagged.

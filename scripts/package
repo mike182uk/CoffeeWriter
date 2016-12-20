@@ -2,4 +2,11 @@
 
 rm -rf ./dist/*
 
-electron-packager ./build --platform darwin --arch x64 --out ./dist --icon ./build/electron/CoffeeWriter.icns --asar
+electron-packager ./build \
+  --platform darwin \
+  --arch x64 \
+  --out ./dist \
+  --icon ./build/electron/CoffeeWriter.icns \
+  --asar
+
+find ./dist -mindepth 1 -maxdepth 1 -type d -execdir tar -czvf {}.tar.gz {} \;
