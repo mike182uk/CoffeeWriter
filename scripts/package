@@ -9,4 +9,9 @@ electron-packager ./build \
   --icon ./build/electron/CoffeeWriter.icns \
   --asar
 
-find ./dist -mindepth 1 -maxdepth 1 -type d -execdir tar -czvf {}.tar.gz {} \;
+cd ./dist
+
+for dir in *
+do
+  tar -cjf ${dir}-${TRAVIS_TAG}.tar.bz2 ${dir}
+done
