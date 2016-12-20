@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
         InputMenu.popup(remote.getCurrentWindow())
         break
       }
+
       node = node.parentNode
     }
   })

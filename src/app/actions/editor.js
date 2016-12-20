@@ -10,7 +10,7 @@ export function compileInput (input) {
     if (input === '') {
       return [
         setStatus(status),
-        updateOutput('')
+        updateOutput(output)
       ].map(dispatch)
     }
 
