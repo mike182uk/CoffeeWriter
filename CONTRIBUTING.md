@@ -36,20 +36,27 @@ Once the development server is running, you can access the application in your b
 npm run dev:app
 ```
 
-## Building the application
+## Install project dependencies
+
+```
+npm install -g yarn
+yarn install
+```
+
+## Build the application
 
 ```
 npm run build:app
 ```
 
-## Running the built application before packaging
+## Run the built application before packaging
 
 ```
 npm run built-app
 ```
 
 
-## Packaging the application
+## Package the application
 
 ```
 npm run package
