@@ -9,7 +9,7 @@ electron-packager ./build \
   --icon ./build/electron/CoffeeWriter.icns \
   --asar
 
-for dir in $(find ./dist -type d -maxdepth 1 -name "CoffeeWriter*")
+for dir in $(find ./dist -type d -maxdepth 1)
 do
     package=$(basename $dir)
 
