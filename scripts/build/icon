@@ -3,3 +3,5 @@
 svg2png --width=1000 --height=1000 src/electron/icon.svg src/electron/icon.png
 
 makeicns -in src/electron/icon.png -out src/electron/CoffeeWriter.icns
+
+rm src/electron/icon.png
