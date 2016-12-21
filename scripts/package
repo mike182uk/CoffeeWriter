@@ -9,9 +9,9 @@ electron-packager ./build \
   --icon ./build/electron/CoffeeWriter.icns \
   --asar
 
-cd ./dist
-
-for dir in *
+for dir in $(find ./dist -type d -maxdepth 1 -name "CoffeeWriter*")
 do
-  tar -cjf ${dir}-${TRAVIS_TAG}.tar.bz2 ${dir}
+    package=$(basename $dir)
+
+    tar -C ${dir} -cjf ./dist/${package}-${TRAVIS_TAG}.tar.bz2 .
 done
