@@ -1,8 +1,8 @@
 import { setStatus } from './status'
 import { updateOutput } from './output'
-import CoffeeScript from 'coffee-script'
+import { getCompiler } from '../coffeescript'
 
-export function compileInput (input) {
+export function compileInput (input, coffeeScriptVersion) {
   return dispatch => {
     let output = ''
     let status = {}
@@ -15,7 +15,7 @@ export function compileInput (input) {
     }
 
     try {
-      output = CoffeeScript.compile(input, { bare: true })
+      output = getCompiler(coffeeScriptVersion).compile(input, { bare: true })
     } catch (e) {
       status.message = e.message
       status.line = e.location.first_line + 1

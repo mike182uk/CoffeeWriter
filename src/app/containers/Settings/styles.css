@@ -1,0 +1,7 @@
+.Settings {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}

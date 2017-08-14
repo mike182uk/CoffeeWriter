@@ -1,5 +1,15 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const deepAssign = require('deep-assign')
+const coffeeScriptVersions = require('./coffeescript-versions')
+
+const getCoffeeScriptAliases = () => {
+  return coffeeScriptVersions.reduce((aliases, version) => {
+    aliases[`coffeescript-${version}`] = path.resolve(__dirname, `vendor/coffeescript-${version}.min.js`)
+
+    return aliases
+  }, {})
+}
 
 module.exports = {
   entry: [
@@ -10,9 +20,7 @@ module.exports = {
     path: path.join(__dirname, 'build', 'app')
   },
   resolve: {
-    alias: {
-      'coffee-script': path.resolve(__dirname, 'vendor/coffee-script-1.10.0.min.js')
-    }
+    alias: deepAssign({}, {}, getCoffeeScriptAliases())
   },
   module: {
     loaders: [

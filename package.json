@@ -1,6 +1,6 @@
 {
   "name": "CoffeeWriter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple desktop app for quickly compiling CoffeeScript",
   "private": true,
   "author": "Michael David Barrett <mike182uk@gmail.com>",
@@ -18,6 +18,7 @@
     "dev:app": "scripty",
     "build:app": "scripty",
     "build:icon": "scripty",
+    "build:vendor-coffeescript": "scripty",
     "built-app": "scripty",
     "package": "scripty",
     "clean": "scripty",

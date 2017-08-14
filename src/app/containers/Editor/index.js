@@ -37,7 +37,7 @@ class Editor extends React.Component {
 
   handleInputChange (input) {
     this.updateValue(input)
-    this.props.dispatch(compileInput(input))
+    this.props.dispatch(compileInput(input, this.props.coffeeScriptVersion))
   }
 
   handleFocusChange (focused) {
@@ -47,6 +47,16 @@ class Editor extends React.Component {
 
     if (!focused && this.state.value === '') {
       this.updateValue(this.defaultValue)
+    }
+  }
+
+  componentDidMount () {
+    this.props.dispatch(compileInput(this.state.value, this.props.coffeeScriptVersion))
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.coffeeScriptVersion !== prevProps.coffeeScriptVersion) {
+      this.props.dispatch(compileInput(this.state.value, this.props.coffeeScriptVersion))
     }
   }
 
