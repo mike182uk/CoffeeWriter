@@ -9,9 +9,9 @@ import '../../components/Setting/styles.css'
 export default function ({ coffeeScriptVersion, editorTheme, outputTheme }) {
   return (
     <div className='Settings'>
-      <CoffeeScriptVersion version={coffeeScriptVersion} />
       <OutputTheme theme={outputTheme} />
       <EditorTheme theme={editorTheme} />
+      <CoffeeScriptVersion version={coffeeScriptVersion} />
     </div>
   )
 }

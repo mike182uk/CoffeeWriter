@@ -7,6 +7,14 @@
   transition: background-color 0.4s ease;
 }
 
+.Status__message {
+  margin: 10px 0;
+}
+
+.Status__error__message {
+  margin: 10px 0;
+}
+
 .Status--ok {
   background-color: #dff0d8;
   color: #3c763d;
@@ -21,9 +29,11 @@
 
 .Status__error__type {
   font-weight: bold;
+  margin: 5px 0 0 0;
 }
 
 .Status__error__location {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-style: italic;
+  margin: 0 0 5px 0;
 }

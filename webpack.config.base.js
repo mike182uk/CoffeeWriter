@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const GoogleFontsWebpackPlugin = require('google-fonts-webpack-plugin')
 const path = require('path')
 const deepAssign = require('deep-assign')
 const coffeeScriptVersions = require('./coffeescript-versions')
@@ -41,6 +42,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/app/index.html')
+    }),
+    new GoogleFontsWebpackPlugin({
+      fonts: [
+        {
+          family: 'Inconsolata'
+        }
+      ],
+      download: true
     })
   ]
 }

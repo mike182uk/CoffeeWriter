@@ -1,6 +1,6 @@
 import { SET_STATUS } from '../actions/status'
 import { SET_INPUT } from '../actions/editor'
-import { UPDATE_OUTPUT } from '../actions/output'
+import { SET_OUTPUT } from '../actions/output'
 import { SET_COFFEESCRIPT_VERSION, SET_EDITOR_THEME, SET_OUTPUT_THEME } from '../actions/settings'
 import { getLatestVersion as getLatestCoffeeScriptVersion } from '../coffeescript'
 import { getDefaultTheme } from '../editor'
@@ -21,7 +21,7 @@ export default function (state = initialState, action) {
         input: action.input
       })
 
-    case UPDATE_OUTPUT:
+    case SET_OUTPUT:
       return Object.assign({}, state, {
         output: action.output
       })

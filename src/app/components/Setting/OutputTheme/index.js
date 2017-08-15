@@ -5,9 +5,9 @@ import { getAllThemes as getAllEditorThemes } from '../../../editor'
 
 const OutputThemeSetting = ({ dispatch, theme }) => {
   return (
-    <div className='Settings_Setting'>
-      <label className='Setting_Label'>Output Theme</label>
-      <select value={theme} onChange={e => {
+    <div className='Settings__setting'>
+      <label className='Setting__label'>Output Theme</label>
+      <select className='Setting__selector' value={theme} onChange={e => {
         dispatch(setOutputTheme(e.target.value))
       }}>
         {getAllEditorThemes().map(v => {

@@ -15,7 +15,8 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       preload: path.resolve(__dirname, 'preload.js')
-    }
+    },
+    titleBarStyle: 'hidden'
   }
 
   let url = `file://${path.resolve(__dirname, '../app/index.html')}`

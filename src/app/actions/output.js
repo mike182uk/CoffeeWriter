@@ -1,8 +1,8 @@
-export const UPDATE_OUTPUT = 'UPDATE_OUTPUT'
+export const SET_OUTPUT = 'SET_OUTPUT'
 
-export function updateOutput (output) {
+export function setOutput (output) {
   return {
-    type: UPDATE_OUTPUT,
+    type: SET_OUTPUT,
     output
   }
 }

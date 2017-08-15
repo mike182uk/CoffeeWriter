@@ -5,9 +5,9 @@ import { getAllVersions as getAllCoffeeScriptVersions } from '../../../coffeescr
 
 const CoffeeScriptVersionSetting = ({ dispatch, version }) => {
   return (
-    <div className='Settings_Setting'>
-      <label className='Setting_Label'>CoffeeScript Version</label>
-      <select value={version} onChange={e => {
+    <div className='Settings__setting'>
+      <label className='Setting__label'>CoffeeScript Version</label>
+      <select className='Setting__selector' value={version} onChange={e => {
         dispatch(setCoffeeScriptVersion(e.target.value))
       }}>
         {getAllCoffeeScriptVersions().map(v => {

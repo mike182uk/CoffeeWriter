@@ -4,8 +4,11 @@
   background-color: #f7f7f7;
   border-bottom: 1px solid #ddd;
   padding: 10px;
+  -webkit-app-region: drag;
 }
 
-.Settings_Setting {
+.Settings__setting {
   margin-left: 10px;
+  display: flex;
+  flex-flow: column;
 }

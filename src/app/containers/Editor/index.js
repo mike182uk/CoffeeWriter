@@ -36,7 +36,7 @@ class Editor extends React.Component {
     }
 
     if (!focused && this.props.children === '') {
-    this.props.dispatch(compileInput(this.defaultValue, this.props.coffeeScriptVersion))
+      this.props.dispatch(compileInput(this.defaultValue, this.props.coffeeScriptVersion))
     }
   }
 
