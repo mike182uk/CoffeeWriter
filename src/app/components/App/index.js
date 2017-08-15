@@ -7,7 +7,7 @@ import Settings from '../../containers/Settings'
 
 import './styles.css'
 
-const App = ({ coffeeScriptVersion, editorTheme, outputTheme, output, status }) => {
+const App = ({ coffeeScriptVersion, editorTheme, outputTheme, input, output, status }) => {
   return (
     <div className='App'>
       <div className='App__Settings'>
@@ -18,7 +18,7 @@ const App = ({ coffeeScriptVersion, editorTheme, outputTheme, output, status }) 
         />
       </div>
       <div className='App__EditorOutput'>
-        <Editor coffeeScriptVersion={coffeeScriptVersion} theme={editorTheme} />
+        <Editor coffeeScriptVersion={coffeeScriptVersion} theme={editorTheme}>{input}</Editor>
         <Output theme={outputTheme}>{output}</Output>
       </div>
       <div className='App__Status'>
@@ -33,6 +33,7 @@ const mapStateToProps = (state) => {
     coffeeScriptVersion: state.app.coffeeScriptVersion,
     editorTheme: state.app.editorTheme,
     outputTheme: state.app.outputTheme,
+    input: state.app.input,
     output: state.app.output,
     status: state.app.status
   }

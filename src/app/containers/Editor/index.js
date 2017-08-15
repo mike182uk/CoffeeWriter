@@ -22,52 +22,32 @@ class Editor extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = {
-      value: this.defaultValue,
-      editorOptions: {
-        lineNumbers: true,
-        mode: 'coffeescript',
-        theme: this.props.theme
-      }
-    }
-
-    this.handleFocusChange = this.handleFocusChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
-  }
-
-  updateValue (newValue) {
-    this.setState({
-      value: newValue
-    })
+    this.handleFocusChange = this.handleFocusChange.bind(this)
   }
 
   handleInputChange (input) {
-    this.updateValue(input)
     this.props.dispatch(compileInput(input, this.props.coffeeScriptVersion))
   }
 
   handleFocusChange (focused) {
-    if (focused && this.state.value === this.defaultValue) {
-      this.updateValue('')
+    if (focused && this.props.children === this.defaultValue) {
+      this.props.dispatch(compileInput('', this.props.coffeeScriptVersion))
     }
 
-    if (!focused && this.state.value === '') {
-      this.updateValue(this.defaultValue)
+    if (!focused && this.props.children === '') {
+    this.props.dispatch(compileInput(this.defaultValue, this.props.coffeeScriptVersion))
     }
   }
 
   componentDidMount () {
-    this.props.dispatch(compileInput(this.state.value, this.props.coffeeScriptVersion))
+    this.props.dispatch(compileInput(this.props.children, this.props.coffeeScriptVersion))
   }
 
   componentDidUpdate (prevProps) {
     if (this.props.coffeeScriptVersion !== prevProps.coffeeScriptVersion) {
-      this.props.dispatch(compileInput(this.state.value, this.props.coffeeScriptVersion))
+      this.props.dispatch(compileInput(this.props.children, this.props.coffeeScriptVersion))
     }
-  }
-
-  shouldComponentUpdate (nextProps) {
-    return true
   }
 
   render () {
@@ -77,7 +57,7 @@ class Editor extends React.Component {
           options={this.options}
           onChange={this.handleInputChange}
           onFocusChange={this.handleFocusChange}
-          value={this.state.value}
+          value={this.props.children}
         />
       </div>
     )

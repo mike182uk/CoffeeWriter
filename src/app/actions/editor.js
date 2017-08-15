@@ -2,6 +2,15 @@ import { setStatus } from './status'
 import { updateOutput } from './output'
 import { getCompiler } from '../coffeescript'
 
+export const SET_INPUT = 'SET_INPUT'
+
+export function setInput (input) {
+  return {
+    type: SET_INPUT,
+    input
+  }
+}
+
 export function compileInput (input, coffeeScriptVersion) {
   return dispatch => {
     let output = ''
@@ -10,6 +19,7 @@ export function compileInput (input, coffeeScriptVersion) {
     if (input === '') {
       return [
         setStatus(status),
+        setInput(input),
         updateOutput(output)
       ].map(dispatch)
     }
@@ -24,6 +34,7 @@ export function compileInput (input, coffeeScriptVersion) {
 
     return [
       setStatus(status),
+      setInput(input),
       updateOutput(output)
     ].map(dispatch)
   }

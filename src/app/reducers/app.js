@@ -1,10 +1,12 @@
 import { SET_STATUS } from '../actions/status'
+import { SET_INPUT } from '../actions/editor'
 import { UPDATE_OUTPUT } from '../actions/output'
 import { SET_COFFEESCRIPT_VERSION, SET_EDITOR_THEME, SET_OUTPUT_THEME } from '../actions/settings'
 import { getLatestVersion as getLatestCoffeeScriptVersion } from '../coffeescript'
 import { getDefaultTheme } from '../editor'
 
 const initialState = {
+  input: '# CoffeeScript goes here...',
   output: '',
   status: '',
   coffeeScriptVersion: getLatestCoffeeScriptVersion(),
@@ -14,6 +16,11 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case SET_INPUT:
+      return Object.assign({}, state, {
+        input: action.input
+      })
+
     case UPDATE_OUTPUT:
       return Object.assign({}, state, {
         output: action.output
