@@ -15,3 +15,9 @@
   flex-direction: row;
   flex: 2 0 auto;
 }
+
+.Resizer.vertical {
+  border-left: 3px solid #ddd;
+  border-right: 3px solid #ddd;
+  cursor: col-resize;
+}

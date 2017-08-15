@@ -1,5 +1,5 @@
-import {compose, applyMiddleware, createStore} from 'redux'
-import {persistStore, autoRehydrate} from 'redux-persist'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { autoRehydrate, persistStore } from 'redux-persist'
 import thunk from 'redux-thunk'
 import reducer from './reducers'
 
@@ -13,7 +13,6 @@ const store = createStore(
 )
 
 persistStore(store, {
-  blacklist: [], // todo
   keyPrefix: 'CoffeeWriter-'
 })
 

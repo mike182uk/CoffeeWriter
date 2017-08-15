@@ -1,21 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { setOutputTheme } from '../../../actions/settings'
+import Selector from '../Selector'
 import { getAllThemes as getAllEditorThemes } from '../../../editor'
 
-const OutputThemeSetting = ({ dispatch, theme }) => {
+export default function ({ theme, onChange }) {
   return (
-    <div className='Settings__setting'>
-      <label className='Setting__label'>Output Theme</label>
-      <select className='Setting__selector' value={theme} onChange={e => {
-        dispatch(setOutputTheme(e.target.value))
-      }}>
-        {getAllEditorThemes().map(v => {
-          return <option value={v} key={v}>{v}</option>
-        })}
-      </select>
-    </div>
+    <Selector
+      label='Output Theme'
+      initialValue={theme}
+      onChange={onChange}
+      options={getAllEditorThemes()}
+    />
   )
 }
-
-export default connect()(OutputThemeSetting)
