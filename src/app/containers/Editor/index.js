@@ -10,7 +10,8 @@ class Editor extends React.Component {
   get options () {
     return {
       lineNumbers: true,
-      mode: 'coffeescript'
+      mode: 'coffeescript',
+      theme: this.props.theme
     }
   }
 
@@ -22,7 +23,12 @@ class Editor extends React.Component {
     super(props)
 
     this.state = {
-      value: this.defaultValue
+      value: this.defaultValue,
+      editorOptions: {
+        lineNumbers: true,
+        mode: 'coffeescript',
+        theme: this.props.theme
+      }
     }
 
     this.handleFocusChange = this.handleFocusChange.bind(this)
@@ -60,10 +66,19 @@ class Editor extends React.Component {
     }
   }
 
+  shouldComponentUpdate (nextProps) {
+    return true
+  }
+
   render () {
     return (
       <div className='Editor'>
-        <Codemirror options={this.options} onChange={this.handleInputChange} onFocusChange={this.handleFocusChange} value={this.state.value} />
+        <Codemirror
+          options={this.options}
+          onChange={this.handleInputChange}
+          onFocusChange={this.handleFocusChange}
+          value={this.state.value}
+        />
       </div>
     )
   }

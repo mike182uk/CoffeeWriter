@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { setCoffeeScriptVersion } from '../../../actions/settings'
 import { getAllVersions as getAllCoffeeScriptVersions } from '../../../coffeescript'
 
-import '../styles.css'
-
 const CoffeeScriptVersionSetting = ({ dispatch, version }) => {
   return (
     <div className='Settings_Setting'>

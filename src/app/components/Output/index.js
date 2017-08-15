@@ -4,11 +4,12 @@ import 'codemirror/mode/javascript/javascript'
 
 import './styles.css'
 
-export default function ({ children }) {
+export default function ({ children, theme }) {
   let options = {
     lineNumbers: true,
     mode: 'javascript',
-    readOnly: true
+    readOnly: true,
+    theme: theme
   }
 
   return (
