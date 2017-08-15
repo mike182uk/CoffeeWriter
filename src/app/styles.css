@@ -1,9 +1,13 @@
 body {
   font-size: 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .CodeMirror {
   font-size: 15px;
   font-family: 'Source Code Pro', monospace;
+}
+
+*, *:before, *:after {
+  position: relative;
 }
