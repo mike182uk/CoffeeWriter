@@ -3,6 +3,7 @@
 # 1.2.0
 
 - Copy editor content / output to clipboard
+- Fix output pane scrolling
 
 # 1.1.0
 

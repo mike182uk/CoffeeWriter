@@ -10,8 +10,11 @@
   flex: 1;
 }
 
-.Resizer.vertical {
-  border-left: 3px solid #ddd;
-  border-right: 3px solid #ddd;
-  cursor: col-resize;
+.layout-splitter {
+  background-color: #ddd !important;
+  width: 5px !important;
+}
+
+.CodeMirror-hscrollbar {
+  left: 0 !important;
 }

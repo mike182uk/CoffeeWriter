@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import SplitPane from 'react-split-pane'
+import SplitterLayout from 'react-splitter-layout'
 import Editor from '../Editor'
 import Status from '../../components/Status'
 import Output from '../../components/Output'
@@ -15,10 +15,10 @@ const App = ({ outputTheme, output, status }) => {
         <Settings />
       </div>
       <div className='App__EditorOutput'>
-        <SplitPane split='vertical' minSize={100} maxSize={-100} defaultSize='50%'>
+        <SplitterLayout percentage primaryMinSize={20} secondaryMinSize={20} secondaryInitialSize={50}>
           <Editor />
           <Output theme={outputTheme}>{output}</Output>
-        </SplitPane>
+        </SplitterLayout>
       </div>
       <div className='App__Status'>
         <Status status={status} />

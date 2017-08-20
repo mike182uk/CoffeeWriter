@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './styles.css'
+
 export default function ({ label, initialValue, options, onChange }) {
   return (
     <div className='Settings__setting'>
