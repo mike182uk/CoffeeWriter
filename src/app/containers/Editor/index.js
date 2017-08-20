@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Codemirror from 'react-codemirror'
+import CopyButton from '../../components/CopyButton'
 import { connect } from 'react-redux'
 import { compileInput } from '../../actions/editor'
 import 'codemirror/mode/coffeescript/coffeescript'
@@ -61,6 +62,7 @@ class Editor extends Component {
           onFocusChange={this.handleFocusChange}
           value={this.props.input}
         />
+        <CopyButton value={this.props.input} />
       </div>
     )
   }

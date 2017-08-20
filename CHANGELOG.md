@@ -1,5 +1,9 @@
 # Changelog
 
+# 1.2.0
+
+- Copy editor content / output to clipboard
+
 # 1.1.0
 
 - Set the version of CoffeeScript to target

@@ -1,14 +1,13 @@
 .Status {
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
-  flex: 0 0 100%;
   transition: background-color 0.4s ease;
 }
 
-.Status__message {
-  margin: 10px 0;
+.Status__message,
+.Status__error {
+  margin: 15px 0;
 }
 
 .Status__error__message {
