@@ -14,6 +14,7 @@ const getCoffeeScriptAliases = () => {
 
 module.exports = {
   entry: [
+    'react-hot-loader/patch',
     path.resolve(__dirname, 'src/app/index.js')
   ],
   output: {
@@ -28,7 +29,9 @@ module.exports = {
       {
         test: /\.js$/,
         include: path.join(__dirname, 'src', 'app'),
-        loader: 'babel'
+        loaders: [
+          'babel-loader'
+        ]
       },
       {
         test: /\.css$/,
