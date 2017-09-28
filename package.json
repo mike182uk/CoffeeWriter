@@ -1,6 +1,6 @@
 {
   "name": "CoffeeWriter",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A simple desktop app for quickly compiling CoffeeScript",
   "private": true,
   "author": "Michael David Barrett <mike182uk@gmail.com>",
