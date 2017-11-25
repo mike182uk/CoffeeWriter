@@ -1,5 +1,11 @@
 # Changelog
 
+# 1.4.0
+
+add CoffeeScript 2.0.2
+
+# 1.3.0
+
 # 1.2.0
 
 - Copy editor content / output to clipboard
