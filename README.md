@@ -1,3 +1,5 @@
+#### ⚠️ This project is no longer maintained
+
 # <img src="src/electron/icon.png" height="26"> CoffeeWriter
 
 [![Version](https://img.shields.io/github/release/mike182uk/CoffeeWriter.svg?style=flat-square)]()
